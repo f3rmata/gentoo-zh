@@ -51,12 +51,6 @@ github = "openzim/libzim"
 use_latest_release = true
 github_account = "liangyongxiang"
 
-["app-arch/zchunk"]
-source = "github"
-github = "zchunk/zchunk"
-use_latest_tag = true
-github_account = "HougeLangley"
-
 ["app-backup/restic-rest-server"]
 source = "github"
 github = "restic/rest-server"
@@ -111,6 +105,20 @@ source = "regex"
 url = "https://cursor.com/install"
 regex = 'https:\/\/downloads\.cursor\.com\/lab\/(\d{4}\.\d{2}\.\d{2})-[^\/]+\/'
 
+["dev-lang/dart"]
+source = "apt"
+pkg = "dart"
+mirror = "https://storage.googleapis.com/download.dartlang.org/linux/debian"
+suite = "stable"
+strip_release = true
+github_account = "peeweep"
+
+["dev-util/fvm"]
+source = "github"
+github = "leoafarias/fvm"
+use_latest_release = true
+github_account = "peeweep"
+
 ["dev-util/gemini-cli"]
 source = "regex"
 url = "https://registry.npmjs.org/@google/gemini-cli"
@@ -146,6 +154,13 @@ github_account = "CHN-beta"
 
 # TODO: PV mismatching tags
 #["app-emulation/looking-glass"]
+
+["app-emulation/winboat-bin"]
+source = "github"
+github = "TibixDev/winboat"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
 
 ["app-emulation/winetricks-zh"]
 source = "github"
@@ -256,11 +271,12 @@ source = "regex"
 url = "https://www.scootersoftware.com/kb/linux_install"
 regex = "bcompare-([\\d.]+).x86_64.tar.gz"
 
-["app-misc/ccal"]
-source = "regex"
-url = "https://ccal.chinesebay.com/ccal/ccal.htm"
-regex = "<title>ccal-([\\d.]+)</title>"
-github_account = "aieu"
+# dead website, http status code 599
+# ["app-misc/ccal"]
+# source = "regex"
+# url = "https://ccal.chinesebay.com/ccal/ccal.htm"
+# regex = "<title>ccal-([\\d.]+)</title>"
+# github_account = "aieu"
 
 ["app-misc/go-yq-bin"]
 source = "github"
@@ -452,13 +468,6 @@ github = "reo7sp/tgbot-cpp"
 use_latest_release = true
 prefix = "v"
 github_account = "CHN-beta"
-
-["dev-cpp/tl-expected"]
-source = "github"
-github = "TartanLlama/expected"
-use_latest_release = true
-prefix = "v"
-github_account = "OriPoin"
 
 ["dev-db/dbeaver-bin"]
 source = "github"
@@ -865,6 +874,13 @@ github = "justfont/open-huninn-font"
 use_latest_release = true
 prefix = "v"
 
+["media-fonts/kose-font"]
+source = "github"
+github = "lxgw/kose-font"
+use_latest_release = true
+prefix = "v"
+github_account = "vowstar"
+
 ["media-fonts/lxgw-neo-xihei"]
 source = "github"
 github = "lxgw/LxgwNeoXiHei"
@@ -877,6 +893,7 @@ source = "github"
 github = "lxgw/LxgwNeoZhiSong"
 use_latest_release = true
 prefix = "v"
+github_account = "vowstar"
 
 # TODO: upstream no tags
 #["media-fonts/misans"]
@@ -940,6 +957,13 @@ github_account = "Linerre"
 #source = "regex"
 #url = "https://code.google.com/archive/p/wangfonts/downloads"
 #regex = "wangfonts-([\\d.]+).zip"
+
+["media-fonts/yozai-font"]
+source = "github"
+github = "lxgw/yozai-font"
+use_latest_release = true
+prefix = "v"
+github_account = "vowstar"
 
 ["media-fonts/zhudou"]
 source = "github"
@@ -1111,6 +1135,12 @@ use_latest_release = true
 prefix = "v"
 github_account = "st0nie"
 
+["media-video/piliplus-bin"]
+source = "github"
+github = "bggRGjQaUbCoE/PiliPlus"
+use_latest_release = true
+github_account = "xysgh"
+
 # TODO: upstream removed linux support
 #["media-video/tenvideo"]
 
@@ -1169,6 +1199,7 @@ url = "https://cdn-go.cn/qq-web/im.qq.com_new/latest/rainbow/linuxConfig.js"
 regex = 'QQ_([\d\.\_]+)_.*.deb'
 from_pattern = '(.*)_(.*)'
 to_pattern = '\1_p\2'
+github_account = "Puqns67"
 
 ["net-im/wechat"]
 source = "regex"
@@ -1281,7 +1312,7 @@ github_account = "Nuralii1i"
 ["net-misc/ntpd-rs"]
 source = "github"
 github = "pendulum-project/ntpd-rs"
-use_latest_tag = true
+use_latest_release = true
 prefix = "v"
 github_account = "peeweep"
 
@@ -1470,6 +1501,13 @@ prefix = "v"
 
 # high update frequency
 # ["net-proxy/trojan-go-fork"]
+
+["net-proxy/tun2socks"]
+source = "github"
+github = "xjasonlyu/tun2socks"
+use_latest_tag = true
+github_account = "peeweep"
+prefix = "v"
 
 ["net-proxy/v2ray"]
 source = "github"
@@ -1693,17 +1731,16 @@ prefix = "v"
 github_account = "Puqns67"
 
 ["www-apps/follow-bin"]
-source = "github"
-github = "RSSNext/Follow"
-use_latest_release = true
-prefix = 'v'
+source = "aur"
+aur = "folo-appimage"
+strip_release = true
 
 ["www-client/brave-bin"]
-source = "github"
-github = "brave/brave-browser"
-use_latest_release = true
+source = "aur"
+aur = "brave-bin"
+strip_release = true
 github_account = "irort"
-prefix = "v"
+prefix = "1:"
 
 ["www-servers/darkhttpd"]
 source = "github"
@@ -1722,6 +1759,7 @@ github_account = "peeweep"
 source = "github"
 github = "alireza0/s-ui"
 use_latest_release = true
+prefix = "v"
 github_account = "gouwazi"
 
 # live package only
